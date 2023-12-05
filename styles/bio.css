@@ -1,0 +1,407 @@
+body {
+    font-family: "Avenir Next";
+    background-color: #FAFAFA;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-nav {
+    background-color: #323232;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media screen and (min-width: 768px) {
+    .main-nav {
+      padding: 24px;
+      background-color: #323232;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .main-nav {
+      padding: 32px;
+      background-color: #323232;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  .main-nav .main-nav__logo {
+    max-height: 40px;
+    margin: 16px;
+    cursor: pointer;
+  }
+  .main-nav .main-nav__buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: auto;
+  }
+  @media screen and (min-width: 768px) {
+    .main-nav .main-nav__buttons {
+      gap: 24px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .main-nav .main-nav__buttons {
+      gap: 32px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .main-nav .main-nav__buttons {
+      align-items: center;
+    }
+  }
+  @media screen and (min-width: 1921px) {
+    .main-nav .main-nav__buttons {
+      gap: 48px;
+    }
+  }
+  .main-nav .main-nav__button {
+    background-color: #323232;
+    color: #C0C0C0;
+    border: none;
+    padding: 8px 16px 4px 106px;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .main-nav .main-nav__button:hover {
+    color: #FFFFFF;
+  }
+  .main-nav .main-nav__button--bio::after, .main-nav .main-nav__button--shows::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #FFFFFF;
+    transform-origin: bottom right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  .main-nav .main-nav__button--bio:hover::after, .main-nav .main-nav__button--bio.active::after, .main-nav .main-nav__button--shows:hover::after, .main-nav .main-nav__button--shows.active::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+  }
+  .main-nav .main-nav__button--shows {
+    text-indent: -140px;
+  }
+
+  .hero-section {
+    position: relative;
+    text-align: center;
+  }
+
+  .hero-section__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-section__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99.5%;
+    background-color: rgba(50, 50, 50, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  @media screen and (min-width: 768px) {
+    .hero-section__overlay {
+      padding: 0 px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .hero-section__overlay {
+      padding: 0 px;
+    }
+  }
+  .hero-section__overlay .hero-section__title {
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 700;
+    padding-right: 30px;
+  }
+  .hero-section__overlay .hero-section__title.custom-padding {
+    padding: 16px;
+  }
+  @media screen and (min-width: 768px) {
+    .hero-section__overlay .hero-section__title {
+      font-size: 60px;
+      line-height: 68px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .hero-section__overlay .hero-section__title {
+      font-size: 60px;
+      line-height: 68px;
+    }
+  }
+
+  .bio-section {
+    padding: 16px;
+  }
+  @media screen and (min-width: 768px) {
+    .bio-section {
+      padding: 24px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .bio-section {
+      padding: 32px;
+    }
+  }
+  .bio-section .bio-section__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: #000000;
+  }
+  @media screen and (min-width: 768px) {
+    .bio-section .bio-section__title {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .bio-section .bio-section__title {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+  .bio-section .bio-section__image {
+    width: 100%;
+    height: auto;
+    margin-top: 16px;
+  }
+  .bio-section .bio-section__quote {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-top: 16px;
+    color: #000000;
+  }
+  .bio-section .bio-section__text {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    margin-top: 16px;
+    color: #000000;
+  }
+
+  .gallery-section {
+    padding: 16px;
+    background-color: #FAFAFA;
+  }
+  @media screen and (min-width: 768px) {
+    .gallery-section {
+      padding: 24px;
+      background-color: #FAFAFA;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .gallery-section {
+      padding: 32px;
+      background-color: #FAFAFA;
+    }
+  }
+  .gallery-section .gallery-section__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: #000;
+  }
+  @media screen and (min-width: 768px) {
+    .gallery-section .gallery-section__title {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .gallery-section .gallery-section__title {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+  .gallery-section .gallery-section__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  @media screen and (min-width: 768px) {
+    .gallery-section .gallery-section__container {
+      gap: 24px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .gallery-section .gallery-section__container {
+      gap: 32px;
+    }
+  }
+  .gallery-section .gallery-section__image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+  .gallery-section .gallery-section__image:hover {
+    filter: grayscale(0%);
+  }
+  @media screen and (min-width: 768px) {
+    .gallery-section .gallery-section__image {
+      width: calc(33.333% - 24px);
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .gallery-section .gallery-section__image {
+      width: calc(33.333% - 32px);
+    }
+  }
+
+  .main-footer {
+    padding: 16px;
+    background-color: #323232;
+    color: #FFFFFF;
+    text-align: left;
+  }
+  @media screen and (min-width: 768px) {
+    .main-footer .main-footer__title-social,
+    .main-footer .main-footer__contact-info {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .main-footer .main-footer__title-social .main-footer__social-icons,
+    .main-footer .main-footer__contact-info .main-footer__social-icons {
+      width: 33.333%;
+      padding-right: 24px;
+      margin-right: auto;
+    }
+    .main-footer .main-footer__title-social .contact-info-section,
+    .main-footer .main-footer__contact-info .contact-info-section {
+      width: 66.667%;
+      padding-right: 24px;
+      position: relative;
+    }
+    .main-footer .main-footer__title-social .contact-info-section strong,
+    .main-footer .main-footer__contact-info .contact-info-section strong {
+      font-weight: 700;
+    }
+    .main-footer .main-footer__title-social .contact-info-section p,
+    .main-footer .main-footer__contact-info .contact-info-section p {
+      margin-top: 8px;
+    }
+    .main-footer .main-footer__title-social .contact-info-section .main-footer__email,
+    .main-footer .main-footer__contact-info .contact-info-section .main-footer__email {
+      color: #FFFFFF;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .main-footer .main-footer__title-social,
+    .main-footer .main-footer__contact-info {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    .main-footer .main-footer__title-social .main-footer__social-icons,
+    .main-footer .main-footer__contact-info .main-footer__social-icons {
+      width: 33.333%;
+      padding-right: 32px;
+      margin-left: auto;
+    }
+    .main-footer .main-footer__title-social .contact-info-section,
+    .main-footer .main-footer__contact-info .contact-info-section {
+      width: 66.667%;
+      padding-right: 32px;
+      position: relative;
+    }
+    .main-footer .main-footer__title-social .contact-info-section strong,
+    .main-footer .main-footer__contact-info .contact-info-section strong {
+      font-weight: 700;
+    }
+    .main-footer .main-footer__title-social .contact-info-section p,
+    .main-footer .main-footer__contact-info .contact-info-section p {
+      margin-top: 8px;
+    }
+    .main-footer .main-footer__title-social .contact-info-section .main-footer__email,
+    .main-footer .main-footer__contact-info .contact-info-section .main-footer__email {
+      color: #FFFFFF;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .main-footer .main-footer__title-social {
+      width: 50%;
+      padding-right: 16px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .main-footer .main-footer__title-social {
+      width: 50%;
+      padding-right: 32px;
+    }
+  }
+  .main-footer .main-footer__title-social .main-footer__title {
+    font-size: 18px;
+  }
+  @media screen and (min-width: 768px) {
+    .main-footer .main-footer__title-social .main-footer__title {
+      font-size: 24px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .main-footer .main-footer__title-social .main-footer__title {
+      font-size: 24px;
+    }
+  }
+  .main-footer .main-footer__title-social .main-footer__social-icons {
+    width: 50%;
+  }
+  @media screen and (min-width: 768px) {
+    .main-footer .main-footer__title-social .main-footer__social-icons {
+      width: 50%;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .main-footer .main-footer__title-social .main-footer__social-icons {
+      width: 50%;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .main-footer__title,
+    .main-footer__social-icons,
+    .main-footer__contact-info {
+      width: 100%;
+      padding-right: 16px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .main-footer__title,
+    .main-footer__social-icons,
+    .main-footer__contact-info {
+      width: 100%;
+      padding-right: 32px;
+    }
+  }
+  .main-footer {
+    position: relative;
+  }
+
+  @media screen and (min-width: 768px) {
+    .main-footer__logo {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }/*# sourceMappingURL=bio.css.map */
+

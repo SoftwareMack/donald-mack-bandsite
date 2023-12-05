@@ -1,0 +1,63 @@
+@font-face {
+  font-family: avenir-next-regular;
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../../assets/Font/Alternative files/AvenirNextLTPro.ttf") format("ttf");
+}
+@font-face {
+  font-family: avenir-next-demi;
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("Demi"), url("../../assets/Font/AvenirNextLTPro-Demi.otf") format(otf);
+}
+@font-face {
+  font-family: avenir-next-bold;
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("bold"), url(../../assets/Font/AvenirNextLTPro-Bold.otf) format("bold");
+}
+h1, h2, h3, h4 {
+  font-family: "Avenir Next", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: bold;
+}
+@media screen and (max-width: 767px) {
+  h1, h2, h3, h4 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+p {
+  font-family: "Avenir Next", sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+@media screen and (max-width: 767px) {
+  p {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+.footer-text {
+  font-family: "Avenir Next", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+@media screen and (max-width: 767px) {
+  .footer-text {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+.labels-buttons {
+  font-family: "Avenir Next", sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+}
+@media screen and (max-width: 767px) {
+  .labels-buttons {
+    font-size: 10px;
+    line-height: 20px;
+  }
+}/*# sourceMappingURL=typography.css.map */

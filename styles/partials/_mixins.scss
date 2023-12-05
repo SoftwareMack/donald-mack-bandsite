@@ -1,0 +1,16 @@
+@use './partials/typography' as *;
+
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+@mixin tablet-styles {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop-styles {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content
+  }
+}
