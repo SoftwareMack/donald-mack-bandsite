@@ -1,31 +1,14 @@
 @use './partials/typography' as *;
 @import './partials/mixins' ;
 
-@mixin tablet-styles {
-  @media screen and (min-width: 768p) {
-    @content;
-  }
-}
-
-@mixin desktop-styles {
-  @media screen and (min-width: 1280p) {
-    @content
-  }
-}
-
 $primary-color: #323232;
 $secondary-color: #C0C0C0;
 $accent-color: #FFFFFF;
 $background-color: #FAFAFA;
 $text-color: #FFFFFF;
-$BandSite-DarkBlack: #323232;
-$Mercury:#E1E1E1;
-$Alabaster: #FAFAFA;
-$BandSite-Black: #000000;
-
 
 body {
-  font-family: 'Avenir';
+  font-family: 'Avenir Next';
   background-color: $background-color;
   color: $text-color;
   margin: 0;
@@ -42,7 +25,7 @@ body {
   margin-top: -18px;
 
   @include tablet-styles {
-    padding: 1.5rem;
+    padding: 24px;
     background-color: #323232;
     display: flex;
     flex-direction: row;
@@ -51,7 +34,7 @@ body {
   }
 
   @include desktop-styles {
-    padding: 2rem;
+    padding: 32px;
     background-color: #323232;
     display: flex;
     flex-direction: row;
@@ -60,21 +43,21 @@ body {
 
   .main-nav__logo {
     max-height: 40px;
-    margin: 1rem;
+    margin: 16px;
     cursor: pointer;
   }
 
   .main-nav__buttons {
     display: flex;
-    gap: 1rem;
+    gap: 16px;
     margin-top: auto;
 
     @include tablet-styles {
-      gap: 1.5rem;
+      gap: 24px;
     }
 
     @include desktop-styles {
-      gap: 2rem;
+      gap: 32px;
     }
 
     @media screen and (max-width: 320px) {
@@ -82,7 +65,7 @@ body {
     }
 
     @media screen and (min-width: 1921px) {
-      gap: 3rem;
+      gap: 48px;
     }
   }
 
@@ -90,7 +73,7 @@ body {
     background-color: $primary-color;
     color: $secondary-color;
     border: none;
-    padding: 0.5rem 1rem 0.25rem  6.625rem;
+    padding: 8px 16px 4px 106px;
     cursor: pointer;
     position: relative;
     text-decoration: none;
@@ -108,7 +91,7 @@ body {
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 0.125rem;
+        height: 2px;
         background-color: $accent-color;
         transform-origin: bottom right;
         transform: scaleX(0);
@@ -159,126 +142,126 @@ body {
   }
 
   .hero-section__title {
-    font-size: 1.875rem;
-    line-height: 2rem;
+    font-size: 30px;
+    line-height: 32px;
     font-weight: 700;
-    padding-right: 1.875rem;
+    padding-right: 30px;
     &.custom-padding {
-      padding: 1rem;
+      padding: 16px;
     }
 
     @include tablet-styles {
-      font-size: 3.75rem;
-      line-height: 4.25rem;
+      font-size: 60px;
+      line-height: 68px;
     }
 
     @include desktop-styles {
-      font-size: 3.75rem;
-      line-height: 4.25rem;
+      font-size: 60px;
+      line-height: 68px;
     }
   }
 }
 
 .bio-section {
-  padding: 1rem;
+  padding: 16px;
 
   @include tablet-styles {
-    padding: 1.5rem;
+    padding: 24px;
   }
 
   @include desktop-styles {
-    padding: 1.5rem;
+    padding: 32px;
   }
 
   .bio-section__title {
-    font-size:1.5rem ;
-    line-height: 2rem;
+    font-size: 24px;
+    line-height: 32px;
     font-weight: 700;
-    color: $BandSite-Black;
+    color: #000000;
 
     @include tablet-styles {
-      font-size: 2.25rem;
+      font-size: 36px;
       line-height: 44px;
     }
 
     @include desktop-styles {
-      font-size: 2.25rem;
-      line-height: 2.75rem;
+      font-size: 36px;
+      line-height: 44px;
     }
   }
 
   .bio-section__image {
     width: 100%;
     height: auto;
-    margin-top: 1rem;
+    margin-top: 16px;
   }
 
   .bio-section__quote {
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
+    font-size: 13px;
+    line-height: 18px;
     font-weight: 600;
-    margin-top: 1rem;
-    color: #323232;
+    margin-top: 16px;
+    color: #000000;
   }
 
   .bio-section__text {
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
+    font-size: 13px;
+    line-height: 18px;
     font-weight: 400;
-    margin-top: 1rem;
-    color: #323232;
+    margin-top: 16px;
+    color: #000000;
   }
 }
 
 .gallery-section {
-  padding: 1rem;
-  background-color: $Alabaster;
+  padding: 16px;
+  background-color: $background-color;
 
   @include tablet-styles {
-    padding: 1.5rem;
-    background-color: $Alabaster;
+    padding: 24px;
+    background-color: $background-color;
   }
 
   @include desktop-styles {
-    padding: 2rem;
-    background-color: $Alabaster;
+    padding: 32px;
+    background-color: $background-color;
   }
 
   .gallery-section__title {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 24px;
+    line-height: 32px;
     font-weight: 700;
     color: #000;
 
     @include tablet-styles {
-      font-size: 2.25rem;
-      line-height: 2.75rem;
+      font-size: 36px;
+      line-height: 44px;
     }
 
     @include desktop-styles {
-      font-size: 2.25rem;
-      line-height: 2.75rem;
+      font-size: 36px;
+      line-height: 44px;
     }
   }
 
   .gallery-section__container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 16px;
 
     @include tablet-styles {
-      gap: 2rem;
+      gap: 24px;
     }
 
     @include desktop-styles {
-      gap: 2rem;
+      gap: 32px;
     }
   }
 
   .gallery-section__image {
     width: 100%;
     height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 
@@ -297,8 +280,8 @@ body {
 }
 
 .main-footer {
-  padding: 1rem;
-  background-color: $BandSite-DarkBlack;
+  padding: 16px;
+  background-color: $primary-color;
   color: $accent-color;
   text-align: left;
 
@@ -306,18 +289,18 @@ body {
     .main-footer__title-social,
     .main-footer__contact-info {
       display: flex;
-      gap: 1.5rem;
+      gap: 24px;
       align-items: center;
 
       .main-footer__social-icons {
         width: 33.333%;
-        padding-right: 1.5rem;
+        padding-right: 24px;
         margin-right: auto;
       }
 
       .contact-info-section {
         width: 66.667%;
-        padding-right: 1.5rem;
+        padding-right: 24px;
         position: relative;
 
         strong {
@@ -325,7 +308,7 @@ body {
         }
 
         p {
-          margin-top: 0.5rem;
+          margin-top: 8px;
         }
 
         .main-footer__email {
@@ -339,18 +322,18 @@ body {
     .main-footer__title-social,
     .main-footer__contact-info {
       display: flex;
-      gap: 2rem;
+      gap: 32px;
       align-items: center;
 
       .main-footer__social-icons {
         width: 33.333%;
-        padding-right: 2rem;
+        padding-right: 32px;
         margin-left: auto;
       }
 
       .contact-info-section {
         width: 66.667%;
-        padding-right: 2rem;
+        padding-right: 32px;
         position: relative;
 
         strong {
@@ -358,7 +341,7 @@ body {
         }
 
         p {
-          margin-top: 0.5rem;
+          margin-top: 8px;
         }
 
         .main-footer__email {
@@ -371,23 +354,23 @@ body {
   .main-footer__title-social {
     @include tablet-styles {
       width: 50%;
-      padding-right: 1rem;
+      padding-right: 16px;
     }
 
     @include desktop-styles {
       width: 50%;
-      padding-right: 2rem;
+      padding-right: 32px;
     }
 
     .main-footer__title {
-      font-size: 1.125rem;
+      font-size: 18px;
 
       @include tablet-styles {
-        font-size: 1.5rem;
+        font-size: 24px;
       }
 
       @include desktop-styles {
-        font-size: 1.5rem;
+        font-size: 24px;
       }
     }
 
@@ -410,7 +393,7 @@ body {
   .main-footer__social-icons,
   .main-footer__contact-info {
     width: 100%;
-    padding-right: 1rem;
+    padding-right: 16px;
   }
 }
 
@@ -419,7 +402,7 @@ body {
   .main-footer__social-icons,
   .main-footer__contact-info {
     width: 100%;
-    padding-right: 2rem;
+    padding-right: 32px;
   }
 }
 
@@ -435,158 +418,119 @@ body {
   }
 }
 
-// _comments.scss
-
 .comments-section {
-  background-color: $Alabaster;
-  padding: 2.25rem;
-  border-radius: 0.25rem;
+    padding: 36px;
+    border-top: 1px solid #E1E1E1;
 
-  h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: $BandSite-DarkBlack;
-  }
+    .comment {
+      margin-bottom: 24px;
 
-  form {
-    label {
-      font-size: 0.875rem;
-      color: $BandSite-DarkBlack;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      font-size: 14px;
-      border: 1px solid $Mercury;
-      border-radius: 4px;
-    }
-
-    button {
-      background-color: $BandSite-Black;
-      color: White;
-      font-size: 0.875rem;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 0.25rem;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $BandSite-DarkBlack;
-      }
-    }
-  }
-
-  .comment {
-    margin-bottom: 1.5rem;
-
-    &__header {
-      display: flex;
-      align-items: center;
-
-      .comment__avatar {
-        width: 3rem;
-        height: 3rem;
+      .avatar {
+        width: 48px;
+        height: 48px;
         border-radius: 50%;
-        background-color: $Mercury;
-        margin-right: 1rem;
+        background-color: #E1E1E1;
       }
 
-      .comment__info {
-        flex-grow: 1;
+      .comment-details {
+        margin-left: 16px;
 
-        h3 {
-          font-size: 1.125rem;
-          line-height: 1.5rem;
-          font-weight: 700;
-          color: $BandSite-DarkBlack;
-          margin-bottom: 0.25rem;
+        .name {
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 600;
+          color: #000000;
         }
 
-        p.comment__timestamp {
-          font-size: 0.75rem;
-          color: $BandSite-DarkBlack;
+        .timestamp {
+          font-size: 12px;
+          line-height: 20px;
+          color: #AFAFAF;
+        }
+
+        .text {
+          font-size: 13px;
+          line-height: 18px;
+          font-weight: 400;
+          color: #000000;
         }
       }
     }
 
-    p.comment__text {
-      font-size: 0.875rem;
-      line-height: 1.125rem;
-      color: $BandSite-DarkBlack;
-    }
-
-    .comment__divider {
-      border: 1px solid $Mercury;
-      margin: 1rem 0;
-    }
-
-    &:hover,
-    &.hover2 {
-      background-color: $BandSite-DarkBlack;
-      color: White;
-    }
-  }
-}
-
-
-
-
-
-// _comments.scss
-
-.comments-section {
-
-    .form-group {
-      margin-bottom: 1rem;
+    form {
+      background-color: #FAFAFA;
+      margin-top: 24px;
+      padding: 8px;
 
       label {
         display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 600;
+        color: #000000;
       }
 
-      input,
-      textarea {
+      input {
         width: 100%;
-        padding: 0.5rem;
-        font-size: 0.875rem;
-        border: 1px solid Mercury;
-        border-radius: 0.35rem;
-        margin-top: 0.5rem;
-      }
-    }
-  }
-
-
-
-  form {
-    .comment-heading {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: BandSite-DarkBlack;
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-
-      label {
-        display: block;
-        font-size: 0.875rem;
-        color: BandSite-DarkBlack;
-        margin-bottom: 0.5rem;
-      }
-
-      input#name,
-      textarea#comment {
-        width: 100%;
+        height: 36px;
         padding: 8px;
-        font-size: 0.875rem;
-        border: 1px solid Mercury;
-        border-radius: 0.35rem;
-        margin-top: 0.5rem;
+        margin-bottom: 16px;
+        border: 1px solid #E1E1E1;
+        border-radius: 4px;
+        font-size: 13px;
+        line-height: 18px;
+        color: #000000;
+      }
+
+      button {
+        background-color: #323232;
+        color: #FFFFFF;
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 700;
+        height: 40px;
+        width: 100%;
+        border-radius: 4px;
+
+        &.hover2 {
+          background-color: #000000;
+        }
       }
     }
   }
+
+  @media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .comments-section {
+      padding: 24px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .comments-section {
+      padding: 16px;
+    }
+  }
+
+
+textarea#comment {
+    width: 100%;
+    height: 100px;
+    resize: none;
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #E1E1E1;
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  .avatar-name {
+    background-image: url('./assets/Images/Mohan-muruge.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
