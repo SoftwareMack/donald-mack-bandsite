@@ -1,0 +1,592 @@
+@use './partials/typography' as *;
+@import './partials/mixins' ;
+
+@mixin tablet-styles {
+  @media screen and (min-width: 768p) {
+    @content;
+  }
+}
+
+@mixin desktop-styles {
+  @media screen and (min-width: 1280p) {
+    @content
+  }
+}
+
+$primary-color: #323232;
+$secondary-color: #C0C0C0;
+$accent-color: #FFFFFF;
+$background-color: #FAFAFA;
+$text-color: #FFFFFF;
+$BandSite-DarkBlack: #323232;
+$Mercury:#E1E1E1;
+$Alabaster: #FAFAFA;
+$BandSite-Black: #000000;
+
+
+body {
+  font-family: 'Avenir';
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+  font-family: 'avenir';
+  src: url(./Assets/Font/AvenirNextLTPro-Regular.otf);
+}
+
+.main-nav {
+  background-color: $primary-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -18px;
+
+  @include tablet-styles {
+    padding: 1.5rem;
+    background-color: #323232;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+  }
+
+  @include desktop-styles {
+    padding: 2rem;
+    background-color: #323232;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .main-nav__logo {
+    max-height: 40px;
+    margin: 1rem;
+    cursor: pointer;
+  }
+
+  .main-nav__buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+
+    @include tablet-styles {
+      gap: 1.5rem;
+    }
+
+    @include desktop-styles {
+      gap: 2rem;
+    }
+
+    @media screen and (max-width: 320px) {
+      align-items: center;
+    }
+
+    @media screen and (min-width: 1921px) {
+      gap: 3rem;
+    }
+  }
+
+  .main-nav__button {
+    background-color: $primary-color;
+    color: $secondary-color;
+    border: none;
+    padding: 0.5rem 1rem 0.25rem  6.625rem;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &--bio,
+    &--shows {
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0.125rem;
+        background-color: $accent-color;
+        transform-origin: bottom right;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:hover::after,
+      &.active::after {
+        transform-origin: bottom left;
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .main-nav__button--shows {
+    text-indent: -140px;
+  }
+}
+
+.hero-section {
+  position: relative;
+  text-align: center;
+}
+
+.hero-section__image {
+  width: 100%;
+  height: auto;
+}
+
+.hero-section__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99.5%;
+  background-color: rgba(50, 50, 50, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  @include tablet-styles {
+    padding: 0 px;
+  }
+
+  @include desktop-styles {
+    padding: 0 px;
+  }
+
+  .hero-section__title {
+    font-size: 1.875rem;
+    line-height: 2rem;
+    font-weight: 700;
+    padding-right: 1.875rem;
+    &.custom-padding {
+      padding: 1rem;
+    }
+
+    @include tablet-styles {
+      font-size: 3.75rem;
+      line-height: 4.25rem;
+    }
+
+    @include desktop-styles {
+      font-size: 3.75rem;
+      line-height: 4.25rem;
+    }
+  }
+}
+
+.bio-section {
+  padding: 1rem;
+
+  @include tablet-styles {
+    padding: 1.5rem;
+  }
+
+  @include desktop-styles {
+    padding: 1.5rem;
+  }
+
+  .bio-section__title {
+    font-size:1.5rem ;
+    line-height: 2rem;
+    font-weight: 700;
+    color: $BandSite-Black;
+
+    @include tablet-styles {
+      font-size: 2.25rem;
+      line-height: 44px;
+    }
+
+    @include desktop-styles {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+  }
+
+  .bio-section__image {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  .bio-section__quote {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: #323232;
+  }
+
+  .bio-section__text {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    color: #323232;
+  }
+}
+
+.gallery-section {
+  padding: 1rem;
+  background-color: $Alabaster;
+
+  @include tablet-styles {
+    padding: 1.5rem;
+    background-color: $Alabaster;
+  }
+
+  @include desktop-styles {
+    padding: 2rem;
+    background-color: $Alabaster;
+  }
+
+  .gallery-section__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #000;
+
+    @include tablet-styles {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+
+    @include desktop-styles {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+  }
+
+  .gallery-section__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @include tablet-styles {
+      gap: 2rem;
+    }
+
+    @include desktop-styles {
+      gap: 2rem;
+    }
+  }
+
+  .gallery-section__image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+
+    @include tablet-styles {
+      width: calc(33.333% - 24px);
+    }
+
+    @include desktop-styles {
+      width: calc(33.333% - 32px);
+    }
+  }
+}
+
+.main-footer {
+  padding: 1rem;
+  background-color: $BandSite-DarkBlack;
+  color: $accent-color;
+  text-align: left;
+
+  @include tablet-styles {
+    .main-footer__title-social,
+    .main-footer__contact-info {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+
+      .main-footer__social-icons {
+        width: 33.333%;
+        padding-right: 1.5rem;
+        margin-right: auto;
+      }
+
+      .contact-info-section {
+        width: 66.667%;
+        padding-right: 1.5rem;
+        position: relative;
+
+        strong {
+          font-weight: 700;
+        }
+
+        p {
+          margin-top: 0.5rem;
+        }
+
+        .main-footer__email {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+
+  @include desktop-styles {
+    .main-footer__title-social,
+    .main-footer__contact-info {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+
+      .main-footer__social-icons {
+        width: 33.333%;
+        padding-right: 2rem;
+        margin-left: auto;
+      }
+
+      .contact-info-section {
+        width: 66.667%;
+        padding-right: 2rem;
+        position: relative;
+
+        strong {
+          font-weight: 700;
+        }
+
+        p {
+          margin-top: 0.5rem;
+        }
+
+        .main-footer__email {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+
+  .main-footer__title-social {
+    @include tablet-styles {
+      width: 50%;
+      padding-right: 1rem;
+    }
+
+    @include desktop-styles {
+      width: 50%;
+      padding-right: 2rem;
+    }
+
+    .main-footer__title {
+      font-size: 1.125rem;
+
+      @include tablet-styles {
+        font-size: 1.5rem;
+      }
+
+      @include desktop-styles {
+        font-size: 1.5rem;
+      }
+    }
+
+    .main-footer__social-icons {
+      width: 50%;
+
+      @include tablet-styles {
+        width: 50%;
+      }
+
+      @include desktop-styles {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@include tablet-styles {
+  .main-footer__title,
+  .main-footer__social-icons,
+  .main-footer__contact-info {
+    width: 100%;
+    padding-right: 1rem;
+  }
+}
+
+@include desktop-styles {
+  .main-footer__title,
+  .main-footer__social-icons,
+  .main-footer__contact-info {
+    width: 100%;
+    padding-right: 2rem;
+  }
+}
+
+.main-footer {
+  position: relative;
+}
+
+.main-footer__logo {
+  @include tablet-styles {
+    position: absolute;
+    top: 3rem;
+    right: 0;
+  }
+}
+
+// _comments.scss
+
+.comments-section {
+  background-color: $Alabaster;
+  padding: 2.25rem;
+  border-radius: 0.25rem;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: $BandSite-DarkBlack;
+  }
+
+  form {
+    label {
+      font-size: 0.875rem;
+      color: $BandSite-DarkBlack;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 14px;
+      border: 1px solid $Mercury;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: $BandSite-Black;
+      color: White;
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $BandSite-DarkBlack;
+      }
+    }
+  }
+
+  .comment {
+    margin-bottom: 1.5rem;
+
+    &__header {
+      display: flex;
+      align-items: center;
+
+      .comment__avatar {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-color: $Mercury;
+        margin-right: 1rem;
+      }
+
+      .comment__info {
+        flex-grow: 1;
+
+        h3 {
+          font-size: 1.125rem;
+          line-height: 1.5rem;
+          font-weight: 700;
+          color: $BandSite-DarkBlack;
+          margin-bottom: 0.25rem;
+        }
+
+        p.comment__timestamp {
+          font-size: 0.75rem;
+          color: $BandSite-DarkBlack;
+        }
+      }
+    }
+
+    p.comment__text {
+      font-size: 0.875rem;
+      line-height: 1.125rem;
+      color: $BandSite-DarkBlack;
+    }
+
+    .comment__divider {
+      border: 1px solid $Mercury;
+      margin: 1rem 0;
+    }
+
+    &:hover,
+    &.hover2 {
+      background-color: $BandSite-DarkBlack;
+      color: White;
+    }
+  }
+}
+
+
+
+
+
+// _comments.scss
+
+.comments-section {
+
+    .form-group {
+      margin-bottom: 1rem;
+
+      label {
+        display: block;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 0.875rem;
+        border: 1px solid Mercury;
+        border-radius: 0.35rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+
+
+  form {
+    .comment-heading {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: BandSite-DarkBlack;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+
+      label {
+        display: block;
+        font-size: 0.875rem;
+        color: BandSite-DarkBlack;
+        margin-bottom: 0.5rem;
+      }
+
+      input#name,
+      textarea#comment {
+        width: 100%;
+        padding: 8px;
+        font-size: 0.875rem;
+        border: 1px solid Mercury;
+        border-radius: 0.35rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
