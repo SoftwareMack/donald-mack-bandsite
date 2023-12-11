@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav class="main-nav">
-        <a href="/pages/shows.html" class="main-nav__logo-link">
+        <a href="/pagaes/shows.html" class="main-nav__logo-link">
             <img src="/assets/Logo/Logo-bandsite.svg" alt="The Bees Knees Logo" class="main-nav__logo">
         </a>
 
@@ -61,67 +61,43 @@
         </div>
     </section>
 
-    <!-- Add this snippet right after the gallery section -->
-
-<section class="comments-section">
+<div class="comments-section">
     <h3>Join the Conversation</h3>
 
-    <form id="commentForm">
+    <form>
       <label for="name">Name</label>
-      <input type="text" id="name" placeholder="Enter your name">
-
+      <div class="avatar avatar-name"></div>
+      <input type="text" id="name" placeholder="Enter your name" required>
       <label for="comment">Comment</label>
-      <textarea id="comment" placeholder="Add a new comment"></textarea>
-
-      <button type="submit">Submit</button>
+      <textarea id="comment" placeholder="Add a new comment" rows="4" required></textarea>
+      <button class="hover2" type="submit">Post Comment</button>
     </form>
 
     <div class="comment">
-      <div class="comment__header">
-        <div class="comment__avatar"></div>
-        <div class="comment__info">
-          <h3>Connor Walton</h3>
-          <p class="comment__timestamp">02/17/2021</p>
+        <div class="avatar"></div>
+        <div class="comment-details">
+        <div class="name">Connor Walton</div>
+        <div class="timestamp">02/17/2021</div>
+        <div class="text">This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.</div>
         </div>
-      </div>
-      <p class="comment__text">
-        This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.
-      </p>
-      <div class="comment__divider"></div>
     </div>
-
     <div class="comment">
-      <div class="comment__header">
-        <div class="comment__avatar"></div>
-        <div class="comment__info">
-          <h3>Emilie Beach</h3>
-          <p class="comment__timestamp">01/09/2021</p>
+        <div class="avatar"></div>
+        <div class="comment-details">
+        <div class="name">Emilie Beach</div>
+        <div class="timestamp">01/09/2021</div>
+        <div class="text">I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.</div>
         </div>
-      </div>
-      <p class="comment__text">
-        I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.
-      </p>
-      <div class="comment__divider"></div>
     </div>
-
     <div class="comment">
-      <div class="comment__header">
-        <div class="comment__avatar"></div>
-        <div class="comment__info">
-          <h3>Miles Acosta</h3>
-          <p class="comment__timestamp">12/20/2020</p>
+        <div class="avatar"></div>
+        <div class="comment-details">
+        <div class="name">Miles Acosta</div>
+        <div class="timestamp">12/20/2020</div>
+        <div class="text">I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.</div>
         </div>
-      </div>
-      <p class="comment__text">
-        I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.
-      </p>
-      <div class="comment__divider"></div>
     </div>
-  </section>
-
-
-
-
+    </div>
     <footer class="main-footer">
         <div class="main-footer__title-social">
             <h3 class="main-footer__title">Get In Touch</h3>
@@ -137,7 +113,6 @@
                 </a>
             </div>
         </div>
-
         <div class="main-footer__contact-info">
             <div class="contact-info-section">
                 <strong>Cam Adams</strong><br>
@@ -146,7 +121,6 @@
                     New York, NY 10012, USA</p><br>
                 <a href="mailto:info@thebeesknees.com" class="main-footer__email">info@thebeesknees.com</a>
             </div>
-
             <div class="contact-info-section">
                 <strong>Pearl Gregg</strong><br>
                 Limitless Artist Group<br>
@@ -154,7 +128,6 @@
                     US / South America / Japan</p><br>
                 <a href="mailto:pearl.gregg@limitlessag.com" class="main-footer__email">pearl.gregg@limitlessag.com</a>
             </div>
-
             <div class="contact-info-section">
                 <strong>Carson Whyte</strong><br>
                 ARCH Entertainment<br>
