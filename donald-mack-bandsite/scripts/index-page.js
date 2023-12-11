@@ -1,99 +1,115 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const comments = [
-    { name: 'Connor Walton', timestamp: new Date('02/17/2021'), text: 'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.' },
-    { name: 'Emilie Beach', timestamp: new Date('01/09/2021'), text: 'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.' },
-    { name: 'Miles Acosta', timestamp: new Date('12/20/2020'), text: 'I can\'t stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can\'t get enough.' }
+// Default comments array
+const defaultComments = [
+    {
+      name: "Connor Walton",
+      timestamp: "02/17/2021",
+      text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
+    },
+    {
+      name: "Emilie Beach",
+      timestamp: "01/09/2021",
+      text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
+    },
+    {
+      name: "Miles Acosta",
+      timestamp: "12/20/2020",
+      text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
+    }
   ];
 
-  const commentForm = document.getElementById('commentForm');
-
-  function displayComments() {
+  // Function to display comments dynamically
+  function displayComment(comment) {
     const commentsSection = document.querySelector('.comments-section');
-    commentsSection.innerHTML = '';
 
-    comments.forEach(comment => {
-      const commentElement = document.createElement('div');
-      commentElement.classList.add('comment');
+    // Create comment element
+    const commentElement = document.createElement('div');
+    commentElement.classList.add('comment');
 
-      const commentHeader = document.createElement('div');
-      commentHeader.classList.add('comment__header');
+    commentElement.innerHTML = `
+      <div class="avatar"></div>
+      <div class="comment-details">
+        <div class="name">${comment.name}</div>
+        <div class="timestamp">${getHumanReadableTimestamp(comment.timestamp)}</div>
+        <div class="text">${comment.text}</div>
+      </div>
+    `;
 
-      const avatar = document.createElement('div');
-      avatar.classList.add('comment__avatar');
-
-      const info = document.createElement('div');
-      info.classList.add('comment__info');
-
-      const name = document.createElement('h3');
-      name.textContent = comment.name;
-
-      const timestamp = document.createElement('p');
-      timestamp.classList.add('comment__timestamp');
-      timestamp.textContent = formatTimestamp(comment.timestamp);
-
-      const text = document.createElement('p');
-      text.classList.add('comment__text');
-      text.textContent = comment.text;
-
-      const divider = document.createElement('div');
-      divider.classList.add('comment__divider');
-
-      commentHeader.appendChild(avatar);
-      info.appendChild(name);
-      info.appendChild(timestamp);
-      commentHeader.appendChild(info);
-
-      commentElement.appendChild(commentHeader);
-      commentElement.appendChild(text);
-      commentElement.appendChild(divider);
-
-      commentsSection.appendChild(commentElement);
-    });
+    // Insert the new comment at the beginning
+    commentsSection.insertBefore(commentElement, commentsSection.firstChild);
   }
 
-  function addComment(event) {
-    event.preventDefault();
+  // Function to get human-readable timestamp
+  function getHumanReadableTimestamp(timestamp) {
+    const currentTimestamp = new Date();
+    const commentTimestamp = new Date(timestamp);
+    const timeDifference = currentTimestamp - commentTimestamp;
 
-    const nameInput = document.getElementById('name');
-    const commentInput = document.getElementById('comment');
-
-    if (!nameInput.value || !commentInput.value) {
-      return;
-    }
-
-    const newComment = {
-      name: nameInput.value,
-      timestamp: new Date(),
-      text: commentInput.value
-    };
-
-    comments.unshift(newComment);
-
-    nameInput.value = '';
-    commentInput.value = '';
-
-    displayComments();
-  }
-
-  function formatTimestamp(timestamp) {
-    const now = new Date();
-    const timeAgoInSeconds = Math.floor((now - timestamp) / 1000);
-    const minutes = Math.floor(timeAgoInSeconds / 60);
+    // Convert time difference to human-readable format
+    const seconds = Math.floor(timeDifference / 1000);
+    const minutes = Math.floor(seconds / 60);
     const hours = Math.floor(minutes / 60);
     const days = Math.floor(hours / 24);
 
-    if (days > 0) {
-      return `${days} day${days > 1 ? 's' : ''} ago`;
-    } else if (hours > 0) {
-      return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-    } else if (minutes > 0) {
-      return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+    if (seconds < 60) {
+      return `${seconds} seconds ago`;
+    } else if (minutes < 60) {
+      return `${minutes} minutes ago`;
+    } else if (hours < 24) {
+      return `${hours} hours ago`;
     } else {
-      return 'Just now';
+      return `${days} days ago`;
     }
   }
 
-  commentForm.addEventListener('submit', addComment);
+  // Function to handle form submission
+  function handleFormSubmission(event) {
+    event.preventDefault();
 
-  displayComments();
-});
+    // Get form values
+    const nameInput = document.getElementById('name');
+    const commentInput = document.getElementById('comment');
+
+    const name = nameInput.value;
+    const commentText = commentInput.value;
+
+    // Form validation
+    if (!name || !commentText) {
+      // Handle validation error state (not specified in the code, you can customize this part)
+      alert('Name and comment cannot be empty!');
+      return;
+    }
+
+    // Construct a new comment object
+    const newComment = {
+      name: name,
+      timestamp: new Date().toLocaleString(), // Using current date and time as timestamp
+      text: commentText
+    };
+
+    // Push the new comment object to the array of comments
+    defaultComments.unshift(newComment);
+
+    // Clear input fields
+    nameInput.value = '';
+    commentInput.value = '';
+
+    // Re-render all comments from the comment array
+    clearComments();
+    defaultComments.forEach(displayComment);
+  }
+
+  // Function to clear all comments from the page
+  function clearComments() {
+    const commentsSection = document.querySelector('.comments-section');
+    commentsSection.innerHTML = '';
+  }
+
+  // Event listener for form submission
+  const form = document.querySelector('form');
+  form.addEventListener('submit', handleFormSubmission);
+
+  // Display default comments only if the comments section is empty
+  const commentsSection = document.querySelector('.comments-section');
+  if (commentsSection.innerHTML.trim() === '') {
+    defaultComments.forEach(displayComment);
+  }
