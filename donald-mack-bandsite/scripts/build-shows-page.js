@@ -1,7 +1,5 @@
-// Constants for class names
 const SHOWS_TABLE_ROW_CLASS = 'shows-table__row';
 
-// Shows Data
 const showsData = [
   { date: 'Mon Sept 06 2021', venue: 'Ronald Lane', location: 'San Francisco, CA' },
   { date: 'Tue Sept 21 2021', venue: 'Pier 3 East', location: 'San Francisco, CA' },
@@ -9,10 +7,9 @@ const showsData = [
   { date: 'Sat Nov 06 2021', venue: 'Hyatt Agency', location: 'San Francisco, CA' },
   { date: 'Fri Nov 26 2021', venue: 'Moscow Center', location: 'San Francisco, CA' },
   { date: 'Wed Dec 15 2021', venue: 'Press Club', location: 'San Francisco, CA' },
-  // Add more show data as needed
+  
 ];
 
-// Function to create a table row for shows
 function createShowRow(show) {
   const tableRow = document.createElement('div');
   tableRow.classList.add(SHOWS_TABLE_ROW_CLASS);
@@ -30,7 +27,6 @@ function createShowRow(show) {
   return tableRow;
 }
 
-// Function to create a table cell
 function createTableCell(text, className) {
   const cell = document.createElement('div');
   cell.classList.add('shows-table__cell', className);
@@ -38,30 +34,27 @@ function createTableCell(text, className) {
   return cell;
 }
 
-// Function to create a "BUY TICKETS" button
 function createBuyTicketsButton() {
   const button = document.createElement('button');
   button.classList.add('cta-button', 'shows-table__cta-button');
   button.textContent = 'BUY TICKETS';
-  // Add event listener for button click if needed
+  
   return button;
 }
 
-// Function to render shows data
 function renderShowsData() {
-  const showsTable = document.querySelector(`.${SHOWS_TABLE_ROW_CLASS}s`); // Fix class name
+  const showsTable = document.querySelector(`.${SHOWS_TABLE_ROW_CLASS}s`); 
 
   showsData.forEach(show => {
     const tableRow = createShowRow(show);
     showsTable.appendChild(tableRow);
 
-    // Add event listeners for hover and click states as needed
     tableRow.addEventListener('mouseover', () => {
       tableRow.classList.add('hover-state');
     });
 
     tableRow.addEventListener('click', () => {
-      // Remove selected state from other rows
+      
       document.querySelectorAll(`.${SHOWS_TABLE_ROW_CLASS}`).forEach(row => {
         row.classList.remove('selected-state');
       });
@@ -71,7 +64,6 @@ function renderShowsData() {
   });
 }
 
-// Embed SoundCloud link
 function embedSoundCloud() {
   const soundcloudContainer = document.querySelector('.hero__soundcloud');
   soundcloudContainer.innerHTML = `
@@ -83,7 +75,6 @@ function embedSoundCloud() {
     </div>`;
 }
 
-// Call functions to render content
 renderShowsData();
 embedSoundCloud();
 
