@@ -534,3 +534,19 @@ textarea#comment {
     background-position: center;
   }
 
+.bio-section__text {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    .bio-section__text {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .bio-section__text p {
+        width: 48%; 
+    }
+}
+
