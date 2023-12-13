@@ -133,7 +133,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "avenir";
-  src: url(./Assets/Font/AvenirNextLTPro-Regular.otf);
+  src: url(./../assets/Font/AvenirNextLTPro-Regular.otf);
 }
 
 .main-nav {
@@ -633,7 +633,24 @@ textarea#comment {
 }
 
 .avatar-name {
-  background-image: url("./assets/Images/Mohan-muruge.jpg");
+  background-image: url("../assets/Images/Mohan-muruge.jpg");
   background-size: cover;
   background-position: center;
-}/*# sourceMappingURL=sprint2remake.css.map */
+}
+
+/* Default styling for bio-section__text */
+.bio-section__text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Media query for tablet and desktop */
+@media screen and (min-width: 768px) {
+  .bio-section__text {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .bio-section__text p {
+    width: 48%; /* Adjust the width as needed */
+  }
+}/*# sourceMappingURL=bio.css.map */
