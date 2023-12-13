@@ -1,4 +1,3 @@
-// Default comments array
 const defaultComments = [
     {
       name: "Connor Walton",
@@ -17,11 +16,9 @@ const defaultComments = [
     }
   ];
 
-  // Function to display comments dynamically
   function displayComment(comment) {
     const commentsSection = document.querySelector('.comments-section');
 
-    // Create comment element
     const commentElement = document.createElement('div');
     commentElement.classList.add('comment');
 
@@ -34,17 +31,14 @@ const defaultComments = [
       </div>
     `;
 
-    // Insert the new comment at the beginning
     commentsSection.insertBefore(commentElement, commentsSection.firstChild);
   }
 
-  // Function to get human-readable timestamp
   function getHumanReadableTimestamp(timestamp) {
     const currentTimestamp = new Date();
     const commentTimestamp = new Date(timestamp);
     const timeDifference = currentTimestamp - commentTimestamp;
 
-    // Convert time difference to human-readable format
     const seconds = Math.floor(timeDifference / 1000);
     const minutes = Math.floor(seconds / 60);
     const hours = Math.floor(minutes / 60);
@@ -61,55 +55,53 @@ const defaultComments = [
     }
   }
 
-  // Function to handle form submission
   function handleFormSubmission(event) {
     event.preventDefault();
 
-    // Get form values
+
     const nameInput = document.getElementById('name');
     const commentInput = document.getElementById('comment');
 
     const name = nameInput.value;
     const commentText = commentInput.value;
 
-    // Form validation
     if (!name || !commentText) {
-      // Handle validation error state (not specified in the code, you can customize this part)
+
       alert('Name and comment cannot be empty!');
       return;
     }
 
-    // Construct a new comment object
+
     const newComment = {
       name: name,
-      timestamp: new Date().toLocaleString(), // Using current date and time as timestamp
+      timestamp: new Date().toLocaleString(),
       text: commentText
     };
 
-    // Push the new comment object to the array of comments
+
     defaultComments.unshift(newComment);
 
-    // Clear input fields
+
     nameInput.value = '';
     commentInput.value = '';
 
-    // Re-render all comments from the comment array
     clearComments();
     defaultComments.forEach(displayComment);
   }
 
-  // Function to clear all comments from the page
+
   function clearComments() {
     const commentsSection = document.querySelector('.comments-section');
     commentsSection.innerHTML = '';
   }
 
-  // Event listener for form submission
+
   const form = document.querySelector('form');
   form.addEventListener('submit', handleFormSubmission);
 
-  // Display default comments only if the comments section is empty
+
   const commentsSection = document.querySelector('.comments-section');
   if (commentsSection.innerHTML.trim() === '') {
     defaultComments.forEach(displayComment);
   }
+
