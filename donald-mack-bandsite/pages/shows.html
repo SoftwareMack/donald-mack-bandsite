@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beautiful Beasts Album</title>
-  <link rel="stylesheet" href="/styles/shows.scss">
-  <link rel="stylesheet" href="/styles/shows.css">
+  <link rel="stylesheet" href="../styles/shows.css">
+ <link rel="stylesheet" href="../styles/shows.scss">
+  <title>BandSite</title>
 </head>
 <body>
     <nav class="main-nav">
-        <a href="/index.html" class="main-nav__logo-link">
+        <a href="../index.html" class="main-nav__logo-link">
             <img src="/assets/Logo/Logo-bandsite.svg" alt="The Bees Knees Logo" class="main-nav__logo">
         </a>
 
@@ -18,80 +18,123 @@
             <button class="main-nav__button main-nav__button--shows">Shows</button>
         </div>
     </nav>
-
 <section class="hero-section">
-  <div class="hero-overlay">
-    <img src="./../assets/Images/hero-shows.jpg" alt="Image Alt Text" class="overlay-image">
-    <h1>Queen of Yellow x For The Stings</h1>
-    <iframe width="100%" height="90%" scrolling="no" frameborder="no" allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1669098723&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-  </div>
-</section>
-
-<section class="main-section">
-  <h2>Shows</h2>
-
-  <div class="ticket-container">
-
-    <div class="ticket">
-      <p class="date desktop">Mon Sept 06 2021</p>
-      <p class="date mobile">Sept 06, 2021</p>
-      <p class="venue">Ronald Lane</p>
-      <p class="location">San Francisco, CA</p>
-      <button class="buy-tickets-cta">BUY TICKETS</button>
+    <img src="/assets/Images/hero-shows.jpg" alt="Hero Image" class="hero-section__image">
+    <div class="hero-section__overlay">
+      <h1 class="hero-section__title custom-padding">Beautiful Beast Album</h1>
+      <p>Queen of Yellow x For The Stings</p>
+      <iframe width="70%" height="100%" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1669098723&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
     </div>
-    <hr class="divider-line">
+  </section>
+  <section class="main">
+    <h2>Shows</h2>
+    <div class="divider"></div>
 
-    <div class="ticket">
-      <p class="date desktop">Tue Sept 21 2021</p>
-      <p class="date mobile">Sept 21, 2021</p>
-      <p class="venue">Pier 3 East</p>
-      <p class="location">San Francisco, CA</p>
-      <button class="buy-tickets-cta">BUY TICKETS</button>
+    <div class="ticket" id="ticket1">
+      <div class="date">
+        <span class="label">DATE</span>
+        <span class="content">Mon Sept 06 2021</span>
+      </div>
+      <div class="venue">
+        <span class="label">VENUE</span>
+        <span class="content">Ronald Lane</span>
+      </div>
+      <div class="location">
+        <span class="label">LOCATION</span>
+        <span class="content">San Francisco, CA</span>
+      </div>
+      <button class="cta" id="cta1">BUY TICKETS</button>
     </div>
-    <hr class="divider-line">
+    <div class="divider"></div>
 
-    <div class="ticket">
-      <p class="date desktop">Fri Oct 15 2021</p>
-      <p class="date mobile">Oct 15, 2021</p>
-      <p class="venue">View Lounge</p>
-      <p class="location">San Francisco, CA</p>
-      <button class="buy-tickets-cta">BUY TICKETS</button>
+    <div class="ticket" id="ticket2">
+      <div class="date">
+        <span class="label">DATE</span>
+        <span class="content">Tue Sept 21 2021</span>
+      </div>
+      <div class="venue">
+        <span class="label">VENUE</span>
+        <span class="content">Pier 3 East</span>
+      </div>
+      <div class="location">
+        <span class="label">LOCATION</span>
+        <span class="content">San Francisco, CA</span>
+      </div>
+      <button class="cta" id="cta2">BUY TICKETS</button>
     </div>
-    <hr class="divider-line">
+    <div class="divider"></div>
 
-    <div class="ticket">
-      <p class="date desktop">Sat Nov 06 2021</p>
-      <p class="date mobile">Nov 06, 2021</p>
-      <p class="venue">Hyatt Agency</p>
-      <p class="location">San Francisco, CA</p>
-      <button class="buy-tickets-cta">BUY TICKETS</button>
+    <div class="ticket" id="ticket3">
+      <div class="date">
+        <span class="label">DATE</span>
+        <span class="content">Fri Oct 15 2021</span>
+      </div>
+      <div class="venue">
+        <span class="label">VENUE</span>
+        <span class="content">View Lounge</span>
+      </div>
+      <div class="location">
+        <span class="label">LOCATION</span>
+        <span class="content">San Francisco, CA</span>
+      </div>
+      <button class="cta" id="cta3">BUY TICKETS</button>
     </div>
-    <hr class="divider-line">
+    <div class="divider"></div>
 
-    <div class="ticket">
-      <p class="date desktop">Fri Nov 26 2021</p>
-      <p class="date mobile">Nov 26, 2021</p>
-      <p class="venue">Moscow Center</p>
-      <p class="location">San Francisco, CA</p>
-      <button class="buy-tickets-cta">BUY TICKETS</button>
+    <div class="ticket" id="ticket4">
+      <div class="date">
+        <span class="label">DATE</span>
+        <span class="content">Sat Nov 06 2021</span>
+      </div>
+      <div class="venue">
+        <span class="label">VENUE</span>
+        <span class="content">Hyatt Agency</span>
+      </div>
+      <div class="location">
+        <span class="label">LOCATION</span>
+        <span class="content">San Francisco, CA</span>
+      </div>
+      <button class="cta" id="cta4">BUY TICKETS</button>
     </div>
-    <hr class="divider-line">
+    <div class="divider"></div>
 
-    <div class="ticket">
-      <p class="date desktop">Wed Dec 15 2021</p>
-      <p class="date mobile">Dec 15, 2021</p>
-      <p class="venue">Press Club</p>
-      <p class="location">San Francisco, CA</p>
-      <button class="buy-tickets-cta">BUY TICKETS</button>
+    <div class="ticket" id="ticket5">
+      <div class="date">
+        <span class="label">DATE</span>
+        <span class="content">Fri Nov 26 2021</span>
+      </div>
+      <div class="venue">
+        <span class="label">VENUE</span>
+        <span class="content">Moscow Center</span>
+      </div>
+      <div class="location">
+        <span class="label">LOCATION</span>
+        <span class="content">San Francisco, CA</span>
+      </div>
+      <button class="cta" id="cta5">BUY TICKETS</button>
     </div>
-    <hr class="divider-line">
+    <div class="divider"></div>
 
-  </div>
 
-</section>
+    <div class="ticket" id="ticket6">
+      <div class="date">
+        <span class="label">DATE</span>
+        <span class="content">Wed Dec 15 2021</span>
+      </div>
+      <div class="venue">
+        <span class="label">VENUE</span>
+        <span class="content">Press Club</span>
+      </div>
+      <div class="location">
+        <span class="label">LOCATION</span>
+        <span class="content">San Francisco, CA</span>
+      </div>
+      <button class="cta" id="cta6">BUY TICKETS</button>
+    </div>
+    <div class="divider"></div>
 
-<footer>
+  </section>
 
     <footer class="main-footer">
         <div class="main-footer__title-social">
@@ -116,7 +159,6 @@
                     New York, NY 10012, USA</p><br>
                 <a href="mailto:info@thebeesknees.com" class="main-footer__email">info@thebeesknees.com</a>
             </div>
-
             <div class="contact-info-section">
                 <strong>Pearl Gregg</strong><br>
                 Limitless Artist Group<br>
@@ -124,7 +166,6 @@
                     US / South America / Japan</p><br>
                 <a href="mailto:pearl.gregg@limitlessag.com" class="main-footer__email">pearl.gregg@limitlessag.com</a>
             </div>
-
             <div class="contact-info-section">
                 <strong>Carson Whyte</strong><br>
                 ARCH Entertainment<br>
@@ -133,18 +174,16 @@
                 <a href="mailto:cwhyte@archentertainment.com" class="main-footer__email">cwhyte@archentertainment.com</a>
             </div>
             </div>
-
             <div class="main-footer__bandsite-container">
                 <div class="main-footer__bandsite">
                     <img src="/assets/Logo/Logo-bandsite.svg" alt="Bandsite Logo" class="main-footer__logo">
                 </div>
             </div>
-
             <p><small class="main-footer__copyright">Copyright The Bees Knees © 2021 All Rights Reserved</small></p>
-</footer>
-<script src="./../scripts/build-shows-page.js"></script>
+  </footer>
+
+
+  <script src="../scripts/build-shows-page.js"></script>
+
 </body>
-</html> 
-       
-       
-   
+</html>
