@@ -226,3 +226,253 @@ body {
       text-indent: -140px;
     }
   }
+
+
+
+
+  .main-footer {
+    padding: 16px;
+    background-color:$bandSiteBlack ;
+    color: $accent-color;
+    text-align: left;
+
+    @include tablet-styles {
+      .main-footer__title-social,
+      .main-footer__contact-info {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+
+        .main-footer__social-icons {
+          width: 33.333%;
+          padding-right: 24px;
+          margin-right: auto;
+        }
+
+        .contact-info-section {
+          width: 66.667%;
+          padding-right: 24px;
+          position: relative;
+
+          strong {
+            font-weight: 700;
+          }
+
+          p {
+            margin-top: 8px;
+          }
+
+          .main-footer__email {
+            color: $accent-color;
+          }
+        }
+      }
+    }
+
+    @include desktop-styles {
+      .main-footer__title-social,
+      .main-footer__contact-info {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+
+        .main-footer__social-icons {
+          width: 33.333%;
+          padding-right: 32px;
+          margin-left: auto;
+        }
+
+        .contact-info-section {
+          width: 66.667%;
+          padding-right: 32px;
+          position: relative;
+
+          strong {
+            font-weight: 700;
+          }
+
+          p {
+            margin-top: 8px;
+          }
+
+          .main-footer__email {
+            color: $accent-color;
+          }
+        }
+      }
+    }
+
+    .main-footer__title-social {
+      @include tablet-styles {
+        width: 50%;
+        padding-right: 16px;
+      }
+
+      @include desktop-styles {
+        width: 50%;
+        padding-right: 32px;
+      }
+
+      .main-footer__title {
+        font-size: 18px;
+
+        @include tablet-styles {
+          font-size: 24px;
+        }
+
+        @include desktop-styles {
+          font-size: 24px;
+        }
+      }
+
+      .main-footer__social-icons {
+        width: 50%;
+
+        @include tablet-styles {
+          width: 50%;
+        }
+
+        @include desktop-styles {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  @include tablet-styles {
+    .main-footer__title,
+    .main-footer__social-icons,
+    .main-footer__contact-info {
+      width: 100%;
+      padding-right: 16px;
+    }
+  }
+
+  @include desktop-styles {
+    .main-footer__title,
+    .main-footer__social-icons,
+    .main-footer__contact-info {
+      width: 100%;
+      padding-right: 32px;
+    }
+  }
+
+  .main-footer {
+    position: relative;
+  }
+
+  .main-footer__logo {
+    @include tablet-styles {
+      position: absolute;
+      top: 3rem;
+      right: 0;
+    }
+  }
+
+.main {
+    padding: 24px;
+
+    .ticket {
+      margin-bottom: 20px;
+      padding: 16px;
+      transition: background-color 0.3s ease;
+
+      &.selected {
+        background-color: $mercury;
+      }
+
+
+      &:hover {
+        background-color: $alabaster;
+
+        .label {
+          background-color: $alabaster;
+        }
+      }
+    }
+  }
+
+
+.ticket:hover {
+    background-color: $alabaster;
+}
+
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet-styles {
+    @media screen and (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
+        @content;
+    }
+}
+
+@mixin desktop-styles {
+    @media screen and (min-width: $desktop-width) {
+        @content;
+    }
+}
+
+.main {
+    padding: 24px;
+
+    .ticket {
+        margin-bottom: 20px;
+        padding: 16px;
+        transition: background-color 0.3s ease;
+
+        &.selected {
+            background-color: $mercury;
+        }
+
+        &:hover {
+            background-color: $alabaster;
+
+            .label {
+                background-color: $alabaster;
+            }
+        }
+
+        @include tablet-styles {
+            padding: 24px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+
+            .label,
+            .content {
+                text-align: center;
+            }
+
+            .cta {
+                margin-top: 10px;
+            }
+        }
+
+        // Desktop styles
+        @include desktop-styles {
+            padding: 32px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+
+            .label,
+            .content {
+                text-align: left;
+            }
+        }
+    }
+  }
+
+
+  @media screen and (max-width: $tablet-width) {
+    .hero-section__overlay {
+      iframe {
+        width: 85%;
+        height: 60px;
+        margin-left: 24px;
+        position: static;
+        top: 0;
+      }
+    }
+  }
