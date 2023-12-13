@@ -535,13 +535,12 @@ textarea#comment {
   }
 
 
-  /* Default styling for bio-section__text */
+
 .bio-section__text {
   display: flex;
   flex-direction: column;
 }
 
-/* Media query for tablet and desktop */
 @media screen and (min-width: 768px) {
   .bio-section__text {
       flex-direction: row;
@@ -549,7 +548,7 @@ textarea#comment {
   }
 
   .bio-section__text p {
-      width: 48%; /* Adjust the width as needed */
+      width: 48%; 
   }
 }
 
