@@ -14,7 +14,7 @@
         </a>
 
         <div class="main-nav__buttons">
-            <button class="main-nav__button main-nav__button--bio">Biography</button>
+          <button class="main-nav__button main-nav__button--bio" onclick="window.location.href='../index.html'">Biography</button>
             <button class="main-nav__button main-nav__button--shows">Shows</button>
         </div>
     </nav>
@@ -27,112 +27,13 @@
         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1669098723&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
     </div>
   </section>
-  <section class="main">
-    <h2>Shows</h2>
-    <div class="divider"></div>
 
-    <div class="ticket" id="ticket1">
-      <div class="date">
-        <span class="label">DATE</span>
-        <span class="content">Mon Sept 06 2021</span>
-      </div>
-      <div class="venue">
-        <span class="label">VENUE</span>
-        <span class="content">Ronald Lane</span>
-      </div>
-      <div class="location">
-        <span class="label">LOCATION</span>
-        <span class="content">San Francisco, CA</span>
-      </div>
-      <button class="cta" id="cta1">BUY TICKETS</button>
-    </div>
-    <div class="divider"></div>
+    <section class="main">
+      <h3>Shows</h3>
+      <table id="shows-table" class="shows-table">
 
-    <div class="ticket" id="ticket2">
-      <div class="date">
-        <span class="label">DATE</span>
-        <span class="content">Tue Sept 21 2021</span>
-      </div>
-      <div class="venue">
-        <span class="label">VENUE</span>
-        <span class="content">Pier 3 East</span>
-      </div>
-      <div class="location">
-        <span class="label">LOCATION</span>
-        <span class="content">San Francisco, CA</span>
-      </div>
-      <button class="cta" id="cta2">BUY TICKETS</button>
-    </div>
-    <div class="divider"></div>
-
-    <div class="ticket" id="ticket3">
-      <div class="date">
-        <span class="label">DATE</span>
-        <span class="content">Fri Oct 15 2021</span>
-      </div>
-      <div class="venue">
-        <span class="label">VENUE</span>
-        <span class="content">View Lounge</span>
-      </div>
-      <div class="location">
-        <span class="label">LOCATION</span>
-        <span class="content">San Francisco, CA</span>
-      </div>
-      <button class="cta" id="cta3">BUY TICKETS</button>
-    </div>
-    <div class="divider"></div>
-
-    <div class="ticket" id="ticket4">
-      <div class="date">
-        <span class="label">DATE</span>
-        <span class="content">Sat Nov 06 2021</span>
-      </div>
-      <div class="venue">
-        <span class="label">VENUE</span>
-        <span class="content">Hyatt Agency</span>
-      </div>
-      <div class="location">
-        <span class="label">LOCATION</span>
-        <span class="content">San Francisco, CA</span>
-      </div>
-      <button class="cta" id="cta4">BUY TICKETS</button>
-    </div>
-    <div class="divider"></div>
-    <div class="ticket" id="ticket5">
-      <div class="date">
-        <span class="label">DATE</span>
-        <span class="content">Fri Nov 26 2021</span>
-      </div>
-      <div class="venue">
-        <span class="label">VENUE</span>
-        <span class="content">Moscow Center</span>
-      </div>
-      <div class="location">
-        <span class="label">LOCATION</span>
-        <span class="content">San Francisco, CA</span>
-      </div>
-      <button class="cta" id="cta5">BUY TICKETS</button>
-    </div>
-    <div class="divider"></div>
-
-
-    <div class="ticket" id="ticket6">
-      <div class="date">
-        <span class="label">DATE</span>
-        <span class="content">Wed Dec 15 2021</span>
-      </div>
-      <div class="venue">
-        <span class="label">VENUE</span>
-        <span class="content">Press Club</span>
-      </div>
-      <div class="location">
-        <span class="label">LOCATION</span>
-        <span class="content">San Francisco, CA</span>
-      </div>
-      <button class="cta" id="cta6">BUY TICKETS</button>
-    </div>
-    <div class="divider"></div>
-
+      </table>
+    </section>
   </section>
 
     <footer class="main-footer">
@@ -180,6 +81,8 @@
             </div>
             <p><small class="main-footer__copyright">Copyright The Bees Knees © 2021 All Rights Reserved</small></p>
   </footer>
-  <script src="../scripts/build-shows-page.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="module" src="../scripts/build-shows-page.js"></script>
+  <script src="../scripts/band-site-api.js"></script>
 </body>
 </html>

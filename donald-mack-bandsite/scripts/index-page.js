@@ -1,3 +1,6 @@
+import BandSiteApi from "./band-site-api.js";
+const bandsiteAPI = new BandSiteApi();
+
 const defaultComments = [
     {
       name: "Connor Walton",
@@ -17,21 +20,43 @@ const defaultComments = [
   ];
 
   function displayComment(comment) {
-    const commentsSection = document.querySelector('.comments-section');
+    const commentsSection = document.querySelector('.comments-container');
 
     const commentElement = document.createElement('div');
     commentElement.classList.add('comment');
 
-    commentElement.innerHTML = `
-      <div class="avatar"></div>
-      <div class="comment-details">
-        <div class="name">${comment.name}</div>
-        <div class="timestamp">${getHumanReadableTimestamp(comment.timestamp)}</div>
-        <div class="text">${comment.text}</div>
-      </div>
-    `;
+    const avatarDiv = document.createElement('div');
+    avatarDiv.classList.add('avatar');
 
-    commentsSection.insertBefore(commentElement, commentsSection.firstChild);
+    const commentDetailsDiv = document.createElement('div');
+    commentDetailsDiv.classList.add('comment-details');
+
+    const nameDiv = document.createElement('div');
+    nameDiv.classList.add('name');
+    nameDiv.textContent = comment.name;
+
+    const timestampDiv = document.createElement('div');
+    timestampDiv.classList.add('timestamp');
+    timestampDiv.textContent = getHumanReadableTimestamp(comment.timestamp);
+
+    const textDiv = document.createElement('div');
+    textDiv.classList.add('text');
+    textDiv.textContent = comment.comment;
+
+    commentDetailsDiv.appendChild(nameDiv);
+    commentDetailsDiv.appendChild(timestampDiv);
+    commentDetailsDiv.appendChild(textDiv);
+
+    commentElement.appendChild(avatarDiv);
+    commentElement.appendChild(commentDetailsDiv);
+
+    commentsSection.appendChild(commentElement);
+    
+    const bioButton = document.querySelector('.main-nav__button--bio');
+    const showsButton = document.querySelector('.main-nav__button--shows');
+
+    bioButton.classList.add('active');
+    showsButton.classList.remove('active');
   }
 
   function getHumanReadableTimestamp(timestamp) {
@@ -55,9 +80,8 @@ const defaultComments = [
     }
   }
 
-  function handleFormSubmission(event) {
+  async function handleFormSubmission(event) {
     event.preventDefault();
-
 
     const nameInput = document.getElementById('name');
     const commentInput = document.getElementById('comment');
@@ -66,42 +90,37 @@ const defaultComments = [
     const commentText = commentInput.value;
 
     if (!name || !commentText) {
-
       alert('Name and comment cannot be empty!');
       return;
     }
 
-
     const newComment = {
       name: name,
-      timestamp: new Date().toLocaleString(),
-      text: commentText
+      comment: commentText
     };
 
+  await bandsiteAPI.postComment(newComment);
 
-    defaultComments.unshift(newComment);
 
+  const commentsSection = document.querySelector('.comments-container');
+  commentsSection.innerHTML=""
+    let Array=await bandsiteAPI.getComments();
+    Array.forEach(displayComment);
 
-    nameInput.value = '';
-    commentInput.value = '';
+    event.target.reset();
 
-    clearComments();
-    defaultComments.forEach(displayComment);
   }
-
 
   function clearComments() {
-    const commentsSection = document.querySelector('.comments-section');
+    const commentsSection = document.querySelector('.comments-container');
     commentsSection.innerHTML = '';
   }
-
 
   const form = document.querySelector('form');
   form.addEventListener('submit', handleFormSubmission);
 
-
-  const commentsSection = document.querySelector('.comments-section');
+  const commentsSection = document.querySelector('.comments-container');
   if (commentsSection.innerHTML.trim() === '') {
-    defaultComments.forEach(displayComment);
+    let Array=await bandsiteAPI.getComments();
+    Array.forEach(displayComment);
   }
-
